@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Tere tulemast peole!";
+}
+
+<div class="jumbotron">
+    <h1 id="text"> @ViewBag.Greeting , kallis sober!</h1>
+</div>
+<style>
+    #text {
+        color : brown;
+    }
+</style>
+
+<div>
+    @ViewBag.Message
+    <img height="150" width="250" src="~/images/kutse.png" />
+</div>
+<div>
+    @Html.ActionLink("Vastan", "Ankeet", "Ankeet", new { @class = "btn btn-primary" })
+</div>
