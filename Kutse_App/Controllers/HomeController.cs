@@ -14,8 +14,10 @@ namespace Kutse_App.Controllers
         {
             ViewBag.Message = "Ootan sind minu peole! Palun tule!";
             int month = DateTime.Now.Month;
-           /* ViewBag.Greeting = month == 1 ? "Rahupäev" : ViewBag.Greeting = month == 2 ? "Pehme padja päev" : ViewBag.Greeting = month == 3 ? "Šokolaadi kirsipäev" : 
-                ViewBag.Greeting = month == 4 ? "spagettide päev" : ViewBag.Greeting = month == 5 ? "";*/
+            ViewBag.Greeting = month == 1 ? "Rahupäev" : ViewBag.Greeting = month == 2 ? "Pehme padja päev" : ViewBag.Greeting = month == 3 ? "Šokolaadi kirsipäev" : 
+                ViewBag.Greeting = month == 4 ? "spagettide päev" : ViewBag.Greeting = month == 5 ? "" : ViewBag.Greeting = month == 6 ? "" : ViewBag.Greeting = month == 7 ? ""
+                : ViewBag.Greeting = month == 8 ? "" : ViewBag.Greeting = month == 9 ? "" : ViewBag.Greeting = month == 10 ? "" : ViewBag.Greeting = month == 11 ? ""
+                : "";
             int hour = DateTime.Now.Hour;
             ViewBag.Greeting = hour >= 0 && hour <= 6 ? "Head õõd" : ViewBag.Greeting = hour >= 6 && hour <= 12 ? "Tere hommikust" :
                 ViewBag.Greeting = hour >= 12 && hour <= 18 ? "Head päevast" : "Tere õhtust";
@@ -53,6 +55,12 @@ namespace Kutse_App.Controllers
             {
                 ViewBag.Message = "Mul on kahju!Ei saa kirja saada!";
             }
+        }
+        GuestContext db = new GuestContext();
+        public ActionResult Guests()
+        {
+            IEnumerable<Guest> guests = db.Guests;
+            return View(guests);
         }
     }
 }
