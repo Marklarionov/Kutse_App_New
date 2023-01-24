@@ -3,17 +3,19 @@
 }
 
 <div class="jumbotron">
-    <h1 id="text"> @ViewBag.Greeting , kallis sober!</h1>
+    <h1 id="text"> @ViewBag.Greeting ,palju õnne @ViewBag.Greeting2 kallis sober!</h1>
 </div>
 <style>
     #text {
-        color : brown;
+        color : black;
     }
 </style>
-
 <div>
+    <br />
     @ViewBag.Message
-    <img height="150" width="250" src="~/images/kutse.png" />
+    <img height="350" width="350" src="~/Images/kutse.png"/>
+    <br />
+    <h4>Ootan sind minu peole! Palun tule!</h4>
 </div>
 <div>
     @Html.ActionLink("Vastan", "Ankeet", "Ankeet", new { @class = "btn btn-primary" })
